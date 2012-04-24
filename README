@@ -1,3 +1,11 @@
 http://rubygems.org/gems/make-rubygem-debs
 
 gem install make-rubygem-debs
+
+This is a simple script to generate .debs for all of the gems in a
+Bundler-enabled Ruby on Rails webapp, using fpm.  To use it:
+
+$ make-rubygem-debs /path/to/my/rails/app
+
+It will create a 'rubygem-debs' sub-directory and make debs for each rubygem
+dependency there for you.  You can then do whatever you need to with them.
