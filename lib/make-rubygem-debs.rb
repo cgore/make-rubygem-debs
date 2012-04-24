@@ -61,11 +61,12 @@ module MakeRubygemDebs
       gems.each do |name, version|
         puts "Trying to make a .deb for #{name} #{version} ..."
         `fpm -s gem -t deb -v #{version} #{name}`
-        debname = "rubygem-#{name}_#{version}_all.deb"
-        if File.exists? debname
-          puts "Successfully created #{debname}."
+        deb_name = name.sub "-", "_"
+        deb_file = "rubygem-#{deb_name}_#{version}_all.deb"
+        if File.exists? deb_file
+          puts "Successfully created #{deb_file}."
         else
-          raise RuntimeError, "Failed to create #{debname}."
+          raise RuntimeError, "Failed to create #{deb_file}."
         end
       end
     end
