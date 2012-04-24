@@ -61,7 +61,7 @@ module MakeRubygemDebs
       gems.each do |name, version|
         puts "Trying to make a .deb for #{name} #{version} ..."
         `fpm -s gem -t deb -v #{version} #{name}`
-        deb_name = name.sub "_", "-"
+        deb_name = name.gsub "_", "-"
         deb_file = "rubygem-#{deb_name}_#{version}_all.deb"
         if File.exists? deb_file
           puts "Successfully created #{deb_file}."
