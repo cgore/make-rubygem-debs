@@ -41,11 +41,32 @@ end
 
 require_relative '/home/chris/make-rubygem-debs/lib/make-rubygem-debs'
 
+
+help_text = "http://rubygems.org/gems/make-rubygem-debs
+
+gem install make-rubygem-debs
+
+This is a simple script to generate .debs for all of the gems in a
+Bundler-enabled Ruby on Rails webapp, using fpm.  To use it:
+
+$ make-rubygem-debs /path/to/my/rails/app
+
+It will create a 'rubygem-debs' sub-directory and make debs for each rubygem
+dependency there for you.  You can then do whatever you need to with them."
+
+
 if __FILE__ == $PROGRAM_NAME
-  topdir = if not ARGV.empty?
-             ARGV[0]
-           else
-             Dir.pwd
-           end
+  topdir = Dir.pwd
+  if not ARGV.empty?
+    if %w(-h --help -?).include? ARGV[0]
+      puts help_text
+      exit 0
+    elsif File.exist? ARGV[0] and File.ftype(ARGV[0]) == 'directory'
+      topdir = ARGV[0]
+    else
+      raise ArgumentError, "Not a directory: #{ARGV[0]}."
+    end
+  end
+
   MakeRubygemDebs::make_rubygem_debs topdir
 end
