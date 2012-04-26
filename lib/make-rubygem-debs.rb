@@ -49,6 +49,7 @@ module MakeRubygemDebs
   BUNDLE = gem_executable_presence_check 'bundle', 'bundler'
 
   def self.make_rubygem_debs topdir
+    depends = []
     gems = Dir.chdir topdir do
       `bundle list`.split("\n")[1..-1].map do |line|
         name, version = line.split[1..2]
@@ -69,7 +70,11 @@ module MakeRubygemDebs
         else
           raise RuntimeError, "Failed to a .deb for #{name} #{version}."
         end
+        depends << "#{deb_name} (>= #{version})"
       end
+      control = File.open 'control', 'w'
+      control.write "Depends: #{depends.join ", "}\n"
+      control.close
     end
   end
 end
