@@ -34,8 +34,8 @@
 
 Gem::Specification.new do |s|
   s.name = 'make-rubygem-debs'
-  s.version = '0.3.0'
-  s.date = '2012-04-26'
+  s.version = '0.3.1'
+  s.date = '2012-04-30'
   s.summary  = "A simple script to generate .debs for all your RoR app' gems"
   s.description = 'A simple script to generate .debs for all of the gems in a Bundler-enabled RoR app, using fpm.'
   s.authors = ['Christopher Mark Gore']
