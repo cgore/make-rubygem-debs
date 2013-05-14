@@ -1,4 +1,5 @@
-# Copyright (c) 2012, Christopher Mark Gore,
+# Copyright (c) 2012-2013, Christopher Mark Gore,
+# Soli Deo Gloria,
 # All rights reserved.
 #
 # 8729 Lower Marine Road, Saint Jacob, Illinois 62281 USA.
@@ -64,7 +65,7 @@ module MakeRubygemDebs
         `fpm -s gem -t deb -v #{version} #{name}`
         deb_name = "rubygem-" + name.gsub("_", "-")
         deb_file = "#{deb_name}_#{version}"
-        deb = Dir.entries(debdir).select {|file| file.match deb_file}
+        deb = Dir.entries('.').select {|file| file.match deb_file}
         if not deb.empty?
           puts "Successfully created #{deb[0]}."
         else
