@@ -1,7 +1,8 @@
 #! /usr/bin/env ruby
 
 
-# Copyright (c) 2012, Christopher Mark Gore,
+# Copyright (c) 2012-2013, Christopher Mark Gore,
+# Soli Deo Gloria,
 # All rights reserved.
 #
 # 8729 Lower Marine Road, Saint Jacob, Illinois 62281 USA.
@@ -39,7 +40,7 @@ if RUBY_VERSION < "1.9"
   raise RuntimeError, "Your version of Ruby is too old!"
 end
 
-require_relative '/home/chris/make-rubygem-debs/lib/make-rubygem-debs'
+require 'make-rubygem-debs'
 
 
 help_text = "http://rubygems.org/gems/make-rubygem-debs
