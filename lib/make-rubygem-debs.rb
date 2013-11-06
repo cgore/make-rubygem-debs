@@ -52,6 +52,9 @@ module MakeRubygemDebs
   def self.make_rubygem_debs topdir
     depends = []
     gems = Dir.chdir topdir do
+      if not File.exists? "Gemfile.lock"
+        raise RuntimeError, "There is no Gemfile.lock within #{topdir}."
+      end
       `bundle list`.split("\n")[1..-1].map do |line|
         name, version = line.split[1..2]
         [name, version[1..-2]]

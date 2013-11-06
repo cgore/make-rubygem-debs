@@ -1,7 +1,10 @@
-# Copyright (c) 2012, Christopher Mark Gore,
+# -*- mode: Ruby; -*-
+
+# Copyright (c) 2012-2013, Christopher Mark Gore,
+# Soli Deo Gloria,
 # All rights reserved.
 #
-# 8729 Lower Marine Road, Saint Jacob, Illinois 62281 USA.
+# 2317 South River Road, Saint Charles, Missouri 63303 USA.
 # Web: http://www.cgore.com
 # Email: cgore@cgore.com
 #
@@ -34,7 +37,7 @@
 
 Gem::Specification.new do |s|
   s.name = 'make-rubygem-debs'
-  s.version = '0.3.4'
+  s.version = '0.3.5'
   s.date = '2013-05-14'
   s.summary  = "A simple script to generate .debs for all your RoR app' gems"
   s.description = 'A simple script to generate .debs for all of the gems in a Bundler-enabled RoR app, using fpm.'
