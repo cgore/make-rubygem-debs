@@ -1,6 +1,7 @@
+# -*- coding: utf-8 -*-
 # -*- mode: Ruby; -*-
 
-# Copyright (c) 2012-2013, Christopher Mark Gore,
+# Copyright © 2012-2014, Christopher Mark Gore,
 # Soli Deo Gloria,
 # All rights reserved.
 #
@@ -39,7 +40,7 @@ Gem::Specification.new do |s|
   s.name = 'make-rubygem-debs'
   s.version = '0.3.6'
   s.date = '2013-11-06'
-  s.summary  = "A simple script to generate .debs for all your RoR app' gems"
+  s.summary  = "A simple script to generate .debs for all your RoR app's gems"
   s.description = 'A simple script to generate .debs for all of the gems in a Bundler-enabled RoR app, using fpm.'
   s.authors = ['Christopher Mark Gore']
   s.email = 'cgore@cgore.com'

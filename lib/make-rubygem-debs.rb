@@ -1,8 +1,10 @@
-# Copyright (c) 2012-2013, Christopher Mark Gore,
+# -*- coding: utf-8 -*-
+
+# Copyright © 2012-2014, Christopher Mark Gore,
 # Soli Deo Gloria,
 # All rights reserved.
 #
-# 8729 Lower Marine Road, Saint Jacob, Illinois 62281 USA.
+# 2317 South River Road, Saint Charles, Missouri 63303 USA.
 # Web: http://www.cgore.com
 # Email: cgore@cgore.com
 #
